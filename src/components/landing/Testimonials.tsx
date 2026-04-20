@@ -52,7 +52,7 @@ export default function Testimonials() {
             </span>
           </div>
           <h2 className="text-display lowercase italic">
-            le verdict <span className="text-outline">client</span>
+            avis <span className="text-outline">client</span>
           </h2>
         </div>
 
