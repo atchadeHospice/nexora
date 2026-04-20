@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
 
         <div className="col-span-12 grid-cell pt-12 flex justify-center border-t border-white/5 opacity-10">
-           <span className="font-display text-[12vw] font-black tracking-tighter whitespace-nowrap lowercase">2026 / paris / tokyo / nyc</span>
+           <span className="font-display text-[12vw] font-black tracking-tighter whitespace-nowrap lowercase">nexora agence</span>
         </div>
       </div>
     </footer>
