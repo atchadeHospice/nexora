@@ -50,13 +50,18 @@ export default function Process() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: i * 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: i * 0.1 }}
               className="p-12 border-b border-white/25 border-r border-white/25 last:border-r-0 lg:border-b-0 space-y-12 group hover:bg-white/[0.02] transition-colors"
             >
-              <span className="font-display italic text-6xl font-black text-primary/20 group-hover:text-primary transition-colors">
+              <motion.span 
+                initial={{ color: 'rgba(0, 240, 255, 0.2)' }}
+                whileInView={{ color: 'rgba(0, 240, 255, 1)' }}
+                transition={{ duration: 1 }}
+                className="font-display italic text-6xl font-black transition-colors"
+              >
                 {step.num}
-              </span>
+              </motion.span>
               <div className="space-y-6">
                 <h3 className="font-display italic text-3xl font-black lowercase text-white">
                   {step.title}

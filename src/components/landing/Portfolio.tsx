@@ -56,12 +56,20 @@ export default function Portfolio() {
               className="group relative overflow-hidden border-b border-white/20 even:border-l border-white/20"
             >
               <div className="relative aspect-video overflow-hidden">
-                <img
+                <motion.img
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
+                  initial={{ filter: 'grayscale(100%)' }}
+                  whileInView={{ filter: 'grayscale(0%)' }}
+                  viewport={{ amount: 0.7 }}
+                  className="w-full h-full object-cover transition-all duration-1000 lg:grayscale lg:group-hover:grayscale-0 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col justify-end p-12 translate-y-8 group-hover:translate-y-0 text-black">
+                <motion.div 
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ amount: 0.8 }}
+                  className="absolute inset-0 bg-primary/40 lg:opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col justify-end p-12 text-black"
+                >
                   <span className="font-display font-black text-[10px] tracking-widest mb-4 opacity-50 lowercase">
                     {project.category}
                   </span>
@@ -71,7 +79,7 @@ export default function Portfolio() {
                     </h3>
                     <ArrowUpRight className="w-10 h-10" />
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           ))}

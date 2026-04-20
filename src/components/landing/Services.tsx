@@ -66,17 +66,22 @@ export default function Services() {
               alt={demo.title}
               className="w-full h-full object-cover opacity-80 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100 group-hover:blur-sm"
             />
-            <div className="absolute inset-0 bg-white/90 group-hover:bg-primary/95 transition-all duration-700 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center p-12 text-center lowercase">
-              <span className="font-display font-black text-2xl md:text-3xl tracking-tighter text-black mb-4 transition-colors">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false, amount: 0.6 }}
+              className="absolute inset-0 bg-white/90 lg:bg-white/90 lg:opacity-0 group-hover:opacity-100 transition-all duration-700 flex flex-col items-center justify-center p-12 text-center lowercase"
+            >
+              <span className="font-display font-black text-2xl md:text-3xl tracking-tighter text-black mb-4">
                 {demo.title}
               </span>
-              <p className="font-display text-[12px] font-medium leading-relaxed text-black/60 mb-8 transition-colors">
+              <p className="font-display text-[12px] font-medium leading-relaxed text-black/60 mb-8">
                 {demo.type}
               </p>
-              <button className="px-8 py-3 bg-black text-white rounded-full font-display font-bold tracking-widest text-[9px] opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all delay-100">
+              <button className="px-8 py-3 bg-black text-white rounded-full font-display font-bold tracking-widest text-[9px] translate-y-4 group-hover:translate-y-0 transition-all delay-100">
                 voir le projet
               </button>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
